@@ -1,0 +1,148 @@
+/* 基本样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    background-color: #E5E5E5;
+}
+
+header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FF8C69;
+    color: #fff;
+}
+
+.container {
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-panel {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    position: relative;
+}
+
+.left-panel h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.left-panel p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.left-panel input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #F5F5F5;
+    margin-bottom: 20px;
+}
+
+.left-panel input[type="submit"] {
+    padding: 15px 30px;
+    font-size: 24px;
+    background-color: #FF8C69;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px #888888;
+    transition: all 0.3s ease;
+}
+
+.left-panel input[type="submit"]:hover {
+    background-color: #FFA07A;
+    box-shadow: 5px 5px 5px #888888;
+}
+
+.right-panel {
+    width: 50%;
+    height: 100%;
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.right-panel img {
+    position: absolute;
+    bottom: 0;
+    right: -200px;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* 鼠标悬停效果 */
+.container:hover .right-panel img {
+    animation-play-state: paused;
+}
+
+.container:hover .left-panel {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+/* 图片浮动效果 */
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+
+    50% {
+        transform: translatey(-20px);
+    }
+
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+/* 底部样式 */
+footer {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FF8C69;
+    color: #fff;
+}
